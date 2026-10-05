@@ -1,0 +1,5 @@
+# Security
+
+Do not post tokens, Keychain exports, CLI homes, account email addresses or raw provider payloads in public issues. For a vulnerability, use the repository’s private vulnerability reporting once the repository owner has enabled it; until then, report privately through the contact listed on ry.cool.
+
+Usage Bar stores account labels, home paths and quota snapshots locally. Claude credentials are read in memory from the existing CLI file or Keychain and sent only to the fixed Anthropic usage endpoint. HTTP redirects are rejected. Codex authentication is handled by its official subprocess. Usage Bar never copies provider credential contents or makes inference calls. On an explicit Sign in click, it runs provider-owned authentication: Codex writes credentials into an isolated CLI home, while Claude updates its default CLI login. The form discloses that Claude login effect. Portal URLs must match an allowlisted HTTPS provider host. Login output is not logged. There is no application analytics service. A provider’s own CLI behaviour remains governed by that CLI.

@@ -1,0 +1,16 @@
+name: Something went wrong
+description: Report a reproducible problem without credentials.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include steps, expected result and actual result. Never include tokens or credential files.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: macOS, Usage Bar and provider CLI versions
+    validations:
+      required: true

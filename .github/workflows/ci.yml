@@ -1,0 +1,21 @@
+name: Check macOS build
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test quota parsing and advice
+        run: swift test
+      - name: Verify connector lifecycle
+        run: ./scripts/test-connectors.sh
+      - name: Verify browser sign-in lifecycle
+        run: ./scripts/test-portals.sh
+      - name: Build app bundle
+        run: ./scripts/build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ry-usage-bar-development
+          path: dist/

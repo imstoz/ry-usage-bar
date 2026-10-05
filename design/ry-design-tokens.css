@@ -1,0 +1,22 @@
+/* ry — extracted live colour tokens, 4 October 2026. */
+:root {
+  --bg: #ffffff;
+  --side: #f5f5f7;
+  --text: #1d1d1f;
+  --muted: #6e6e73;
+  --border: #e5e5ea;
+  --selected: #e9e9ed;
+  --activity-1: #dceeff;
+  --activity-2: #006fe6;
+  --activity-3: #5856d6;
+  --activity-4: #af35c9;
+  --focus: #007aff;
+}
+body.dark {
+  --bg: #111113;
+  --side: #1c1c1e;
+  --text: #f5f5f7;
+  --muted: #a1a1a6;
+  --border: #333336;
+  --selected: #2c2c2e;
+}
