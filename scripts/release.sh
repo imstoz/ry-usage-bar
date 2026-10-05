@@ -20,6 +20,8 @@ codesign --verify --strict "$APP"
 ditto -c -k --keepParent "$APP" dist/notarise.zip
 xcrun notarytool submit dist/notarise.zip --keychain-profile "$NOTARY_PROFILE" --wait
 xcrun stapler staple "$APP"
+xcrun stapler validate "$APP"
+spctl --assess --type execute --verbose=2 "$APP"
 STAGE="$(mktemp -d)"
 trap 'rm -rf "$STAGE"' EXIT
 ditto "$APP" "$STAGE/ry Usage Bar.app"
@@ -28,5 +30,6 @@ hdiutil create -volname 'ry Usage Bar' -srcfolder "$STAGE" -ov -format UDZO dist
 codesign --timestamp --sign "$SIGNING_IDENTITY" dist/ry-usage-bar.dmg
 xcrun notarytool submit dist/ry-usage-bar.dmg --keychain-profile "$NOTARY_PROFILE" --wait
 xcrun stapler staple dist/ry-usage-bar.dmg
+xcrun stapler validate dist/ry-usage-bar.dmg
 shasum -a 256 dist/ry-usage-bar.dmg > dist/SHA256SUMS
 printf 'Release artefacts built; review before publishing.\n'

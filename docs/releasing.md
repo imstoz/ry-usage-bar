@@ -1,6 +1,6 @@
 # Releasing
 
-The repository is prepared locally. No GitHub repository or public release has been created. Choose the repository under Ryan’s account, enable private vulnerability reporting, and push the reviewed source before distributing downloads. Do not invent a repository URL in installation instructions.
+Source and the unsigned 0.1.3 development preview are published at https://github.com/imstoz/ry-usage-bar. Downloaded preview builds are blocked by default macOS security settings. A normal public installation requires Developer ID signing and Apple notarisation. Do not describe the preview as a signed release.
 
 1. Complete the acceptance checklist with real provider accounts. Resolve compatibility failures and document supported CLI versions.
 2. Update version and build number in Info.plist, the initialisation client version, the settings version and README. Add release notes in CHANGELOG.md.
@@ -10,4 +10,4 @@ The repository is prepared locally. No GitHub repository or public release has b
 6. Verify signatures with `codesign --verify --strict` and assessment with `spctl --assess --type execute`. Test the downloaded DMG on a clean Mac, including Intel.
 7. Create a draft GitHub release containing the DMG, checksum and truthful release notes. Review it before making it public. Replace the development-preview install section with the actual download link only after the release is public.
 
-A future auto-updater needs a verified signed feed and trusted signing keys, rollback tests and a documented update policy. No updater is included in 0.1.0. The signing/notarisation script is provided but cannot be exercised without Ryan’s Apple Developer credentials.
+A future auto-updater needs a verified signed feed and trusted signing keys, rollback tests and a documented update policy. No updater is included in 0.1.3. The signing/notarisation script is provided but cannot be exercised without Ryan’s Apple Developer credentials.
