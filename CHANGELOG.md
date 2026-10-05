@@ -1,5 +1,12 @@
 # Changelog
 
+## Packaging update — 5 October 2026
+
+- Added a Finder disk image with a branded drag-to-Applications window.
+- Preview and signed releases share the installer layout.
+- Updated download and installation instructions. Apple signing remains pending.
+
+
 ## 0.1.0 — development preview
 
 Original ry interface, Codex and Claude connectors, named homes, separate quota buckets, remaining/used meters, menu-bar pinning, cache freshness, local rule-based advice, demo mode, login-item settings, tests and macOS packaging scripts. Public signing, notarisation and real-account acceptance remain pending. Grok and Kimi support is planned.

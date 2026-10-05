@@ -22,11 +22,7 @@ xcrun notarytool submit dist/notarise.zip --keychain-profile "$NOTARY_PROFILE" -
 xcrun stapler staple "$APP"
 xcrun stapler validate "$APP"
 spctl --assess --type execute --verbose=2 "$APP"
-STAGE="$(mktemp -d)"
-trap 'rm -rf "$STAGE"' EXIT
-ditto "$APP" "$STAGE/ry Usage Bar.app"
-ln -s /Applications "$STAGE/Applications"
-hdiutil create -volname 'ry Usage Bar' -srcfolder "$STAGE" -ov -format UDZO dist/ry-usage-bar.dmg
+./scripts/package-dmg.sh "$APP" dist/ry-usage-bar.dmg
 codesign --timestamp --sign "$SIGNING_IDENTITY" dist/ry-usage-bar.dmg
 xcrun notarytool submit dist/ry-usage-bar.dmg --keychain-profile "$NOTARY_PROFILE" --wait
 xcrun stapler staple dist/ry-usage-bar.dmg

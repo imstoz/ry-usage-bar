@@ -11,3 +11,5 @@ Source and the unsigned 0.1.3 development preview are published at https://githu
 7. Create a draft GitHub release containing the DMG, checksum and truthful release notes. Review it before making it public. Replace the development-preview install section with the actual download link only after the release is public.
 
 A future auto-updater needs a verified signed feed and trusted signing keys, rollback tests and a documented update policy. No updater is included in 0.1.3. The signing/notarisation script is provided but cannot be exercised without Ryan’s Apple Developer credentials.
+
+The DMG layout is shared by preview and signed releases. Install the build-only dependency with `python3 -m pip install -r scripts/dmg-requirements.txt`. `scripts/package-dmg.sh` writes the Finder window, background, app position and Applications shortcut without automating Finder. The Python dependency is not required by app users.

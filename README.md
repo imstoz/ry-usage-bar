@@ -72,6 +72,10 @@ Account names, home paths, quota snapshots and isolated Codex login homes live i
 
 `Sources/UsageCore` holds quota parsing, freshness and advice. `Sources/UsageBar` holds native UI, local state and connectors. `Tests/UsageCoreTests` verifies semantic edge cases. `design/` preserves the supplied design authority. `docs/` covers the research, architecture, release procedure and acceptance checklist. `scripts/` builds app and distribution bundles. GitHub Actions runs tests and an app build; issue forms ask for redacted reproductions.
 
+## Download installation
+
+Download the DMG from [GitHub Releases](https://github.com/imstoz/ry-usage-bar/releases/tag/v0.1.3) and open it. Its Finder window shows **ry Usage Bar → Applications**. Drag the app onto Applications, then open it from Applications and eject the disk image. The app lives in the menu bar. The preview remains unsigned by Apple and may be blocked by macOS.
+
 See [research](docs/research.md), [architecture](docs/architecture.md), [release instructions](docs/releasing.md), [acceptance checklist](docs/acceptance.md), [contributing](CONTRIBUTING.md) and [security](SECURITY.md).
 
 ## Credits

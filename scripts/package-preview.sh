@@ -17,5 +17,6 @@ codesign --force --sign - "$APP"
 codesign --verify --strict "$APP"
 VERSION="$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' Info.plist)"
 ditto -c -k --keepParent "$APP" "dist/ry-usage-bar-preview-$VERSION-universal.zip"
-(cd dist && shasum -a 256 "ry-usage-bar-preview-$VERSION-universal.zip" > SHA256SUMS)
+./scripts/package-dmg.sh "$APP" "dist/ry-usage-bar-preview-$VERSION-universal.dmg"
+(cd dist && shasum -a 256 "ry-usage-bar-preview-$VERSION-universal.zip" "ry-usage-bar-preview-$VERSION-universal.dmg" > SHA256SUMS)
 printf 'Universal preview packaged. Not Developer ID signed or notarised.\n'
